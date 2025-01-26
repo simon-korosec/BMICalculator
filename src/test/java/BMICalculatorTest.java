@@ -71,6 +71,18 @@ class BMICalculatorTest {
         assertEquals(2, bmiCalculatorCorey.calculateBMICategory());
     }
 
+    @Test
+    @DisplayName("Test Methode: getBMICategoryName")
+    void testGetBMICategoryName() {
+        assertEquals("Übergewicht", bmiCalculatorSusi.getBMICategoryName());
+    }
+
+    @Test
+    @DisplayName("Test Methode: getBMICategoryName")
+    void testTwoGetBMICategoryName() {
+        assertEquals("Sehr starkes Übergewicht", bmiCalculatorCorey.getBMICategoryName());
+    }
+
 
 
 
