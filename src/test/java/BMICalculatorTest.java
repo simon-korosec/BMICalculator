@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BMICalculatorTest {
 
-    BMICalculator bmiCalculator = new BMICalculator("Max", "Mustermann", 179, 81.9, 'M');
+    BMICalculator bmiCalculator = new BMICalculator("Max", "Mustermann", 181, 81.9, 'M');
 
     @Test
     @DisplayName("Test Constructor: Firstname")
@@ -23,7 +23,7 @@ class BMICalculatorTest {
     @Test
     @DisplayName("Test Constructor: Body Height")
     void testBodyHeight() {
-        assertEquals(179, bmiCalculator.getBodyHeight());
+        assertEquals(181, bmiCalculator.getBodyHeight());
     }
 
     @Test
