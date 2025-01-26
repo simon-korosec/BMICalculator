@@ -59,6 +59,20 @@ class BMICalculatorTest {
         assertEquals(37.04, bmiCalculatorCorey.calculateBMI());
     }
 
+    @Test
+    @DisplayName("Test Methode: calculateBMICategory")
+    void testCalculateBMICategory() {
+        assertEquals(1, bmiCalculatorSusi.calculateBMICategory());
+    }
+
+    @Test
+    @DisplayName("Test Methode: calculateBMICategory")
+    void testTwoCalculateBMICategory() {
+        assertEquals(2, bmiCalculatorCorey.calculateBMICategory());
+    }
+
+
+
 
 
 
