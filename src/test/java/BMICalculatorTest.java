@@ -9,12 +9,16 @@ class BMICalculatorTest {
     BMICalculator bmiCalculatorMax;
     BMICalculator bmiCalculatorSusi;
     BMICalculator bmiCalculatorCorey;
+    BMICalculator bmiCalculatorAlex;
+    BMICalculator bmiCalculatorSabine;
 
     @BeforeEach
     void setUp() {
-        bmiCalculatorMax = new BMICalculator("Max", "Mustermann", 181, 81.9, 'M');
+        bmiCalculatorMax = new BMICalculator("Max", "Mustermann", 181, 59.5, 'M');
         bmiCalculatorSusi = new BMICalculator("Susi", "Sorglos", 170, 70.0, 'W');
         bmiCalculatorCorey = new BMICalculator("Corey", "Taylor", 180, 120.0, 'M');
+        bmiCalculatorAlex = new BMICalculator("Alex", "Lustig", 196, 58.7, 'M');
+        bmiCalculatorSabine = new BMICalculator("Sabine", "Müller", 158, 48.7, 'W');
     }
 
     @Test
@@ -38,7 +42,7 @@ class BMICalculatorTest {
     @Test
     @DisplayName("Test Constructor: Body Weight")
     void testBodyWeight() {
-        assertEquals(81.9, bmiCalculatorMax.getBodyWeight());
+        assertEquals(59.5, bmiCalculatorMax.getBodyWeight());
     }
 
     @Test
@@ -60,6 +64,24 @@ class BMICalculatorTest {
     }
 
     @Test
+    @DisplayName("Test Methode: calculateBMI")
+    void testThreeCalculateBMI() {
+        assertEquals(18.16, bmiCalculatorMax.calculateBMI());
+    }
+
+    @Test
+    @DisplayName("Test Methode: calculateBMI")
+    void testFourCalculateBMI() {
+        assertEquals(15.28, bmiCalculatorAlex.calculateBMI());
+    }
+
+    @Test
+    @DisplayName("Test Methode: calculateBMI")
+    void testFiveCalculateBMI() {
+        assertEquals(19.51, bmiCalculatorSabine.calculateBMI());
+    }
+
+    @Test
     @DisplayName("Test Methode: calculateBMICategory")
     void testCalculateBMICategory() {
         assertEquals(1, bmiCalculatorSusi.calculateBMICategory());
@@ -69,6 +91,24 @@ class BMICalculatorTest {
     @DisplayName("Test Methode: calculateBMICategory")
     void testTwoCalculateBMICategory() {
         assertEquals(2, bmiCalculatorCorey.calculateBMICategory());
+    }
+
+    @Test
+    @DisplayName("Test Methode: calculateBMICategory")
+    void testThreeCalculateBMICategory() {
+        assertEquals(-1, bmiCalculatorMax.calculateBMICategory());
+    }
+
+    @Test
+    @DisplayName("Test Methode: calculateBMICategory")
+    void testFourCalculateBMICategory() {
+        assertEquals(-2, bmiCalculatorAlex.calculateBMICategory());
+    }
+
+    @Test
+    @DisplayName("Test Methode: calculateBMICategory")
+    void testFiveCalculateBMICategory() {
+        assertEquals(0, bmiCalculatorSabine.calculateBMICategory());
     }
 
     @Test
@@ -83,9 +123,21 @@ class BMICalculatorTest {
         assertEquals("Sehr starkes Übergewicht", bmiCalculatorCorey.getBMICategoryName());
     }
 
+    @Test
+    @DisplayName("Test Methode: getBMICategoryName")
+    void testThreeGetBMICategoryName() {
+        assertEquals("Untergewicht", bmiCalculatorMax.getBMICategoryName());
+    }
 
+    @Test
+    @DisplayName("Test Methode: getBMICategoryName")
+    void testFourGetBMICategoryName() {
+        assertEquals("Sehr starkes Untergewicht", bmiCalculatorAlex.getBMICategoryName());
+    }
 
-
-
-
+    @Test
+    @DisplayName("Test Methode: getBMICategoryName")
+    void testFiveGetBMICategoryName() {
+        assertEquals("Normalgewicht", bmiCalculatorSabine.getBMICategoryName());
+    }
 }
