@@ -15,7 +15,7 @@ public class BMICalculator {
     }
 
     public double calculateBMI() {
-        double bmi = bodyWeight / Math.pow(bodyHeight, 2);
+        double bmi = bodyWeight / Math.pow((bodyHeight /100.0), 2);
         return round(bmi);
     }
 
