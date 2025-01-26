@@ -6,37 +6,60 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BMICalculatorTest {
 
-    BMICalculator bmiCalculator = new BMICalculator("Max", "Mustermann", 181, 81.9, 'M');
+    BMICalculator bmiCalculatorMax;
+    BMICalculator bmiCalculatorSusi;
+    BMICalculator bmiCalculatorCorey;
+
+    @BeforeEach
+    void setUp() {
+        bmiCalculatorMax = new BMICalculator("Max", "Mustermann", 181, 81.9, 'M');
+        bmiCalculatorSusi = new BMICalculator("Susi", "Sorglos", 170, 70.0, 'W');
+        bmiCalculatorCorey = new BMICalculator("Corey", "Taylor", 180, 120.0, 'M');
+    }
 
     @Test
     @DisplayName("Test Constructor: Firstname")
     void testFirstname() {
-        assertEquals("Max", bmiCalculator.getFirstname());
+        assertEquals("Max", bmiCalculatorMax.getFirstname());
     }
 
     @Test
     @DisplayName("Test Constructor: Lastname")
     void testLastname() {
-        assertEquals("Mustermann", bmiCalculator.getLastname());
+        assertEquals("Mustermann", bmiCalculatorMax.getLastname());
     }
 
     @Test
     @DisplayName("Test Constructor: Body Height")
     void testBodyHeight() {
-        assertEquals(181, bmiCalculator.getBodyHeight());
+        assertEquals(181, bmiCalculatorMax.getBodyHeight());
     }
 
     @Test
     @DisplayName("Test Constructor: Body Weight")
     void testBodyWeight() {
-        assertEquals(81.9, bmiCalculator.getBodyWeight());
+        assertEquals(81.9, bmiCalculatorMax.getBodyWeight());
     }
 
     @Test
     @DisplayName("Test Constructor: Gender")
     void testGender() {
-        assertEquals('M', bmiCalculator.getGender());
+        assertEquals('M', bmiCalculatorMax.getGender());
     }
+
+    @Test
+    @DisplayName("Test Methode: calculateBMI")
+    void testCalculateBMI() {
+        assertEquals(24.22, bmiCalculatorSusi.calculateBMI());
+    }
+
+    @Test
+    @DisplayName("Test Methode: calculateBMI")
+    void testTwoCalculateBMI() {
+        assertEquals(37.04, bmiCalculatorCorey.calculateBMI());
+    }
+
+
 
 
 }
